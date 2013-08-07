@@ -1,0 +1,14 @@
+<% if activity.trackable %>
+	<div class="activity">
+		<%= link_to activity.owner.user_name, activity.owner if activity.owner %> liked 
+		<% if defined?(activity.trackable.comment.user) && activity.trackable.comment.user == activity.owner %>
+			his/her own <%= link_to "comment.", activity.trackable.comment.user %>
+		<% elsif defined?(activity.trackable.micropost.user) && activity.trackable.micropost.user == activity.owner %>
+			his/her own <%= link_to "post.", activity.trackable.micropost.user %>
+		<% else %>
+			<%= link_to activity.trackable.micropost.user.user_name + "'s post.", activity.trackable.micropost.user rescue link_to activity.trackable.comment.user.user_name + "'s comment.", activity.trackable.comment.user  %>
+		<% end %>
+		<br>
+		<span class="timestamp"><%= time_ago_in_words(activity.created_at) %> ago</span>
+	</div>
+<% end %>	

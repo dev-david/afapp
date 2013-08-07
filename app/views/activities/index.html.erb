@@ -1,0 +1,6 @@
+<% provide(:title, 'Recent Activity') %>
+<h1>Recent Activity</h1>
+
+<% @activities.each do |activity| %>
+		<%= render_activity activity %>
+<% end %>

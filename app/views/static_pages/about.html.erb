@@ -1,0 +1,23 @@
+<div class="span4">
+	<div class="david_unit">
+		<div class="center">
+			<img src="images/bomyouandi.jpg" alt="Bom Park" style="width: 450px;"/>
+			<h3>About Us</h3>
+			 <%= link_to "Asia Fan", root_path %>. Where enthusiasts of the Asian scene can share.
+		</div>
+			<i class="icon-comment-alt icon-2x"></i> Post about the asian themed things you love <br>
+			<i class="icon-camera icon-2x"></i> Share your favorite pictures <br>
+			<i class="icon-user icon-2x"> </i> Follow interesting people <br>
+			<i class="icon-globe icon-2x"></i> Connect with enthusiasts around the world
+		<div class="center">
+			<% if !signed_in? %>
+			<%= link_to "Sign In", signin_path, class: "btn btn-large submit_button"%>
+			<%= link_to "Join Asia Fan!", signup_path, class: "btn btn-large submit_button_green", id: :pop %><br>
+			<% end %>
+			<small>
+				<%= link_to "Asia Fan", root_path %>
+				by <a href="http://www.devdavid.com" target="_blank">Dev David</a>
+			</small>
+		</div>
+	</div>
+</div>

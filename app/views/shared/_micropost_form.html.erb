@@ -1,0 +1,22 @@
+<div class="post_area">
+<button class="post_button"><i class="icon-plus-sign icon-3x"></i> <i class="icon-edit icon-3x"></i> <i class="icon-camera icon-3x"></i></button>
+<div class="post_field">
+	<%= form_for @micropost, :html => { :multipart => true } do |f| %>
+		<div class="field">
+			<%= f.text_field :title, placeholder: "Title  *Optional" %>
+			<div class="input-prepend">
+				<span class="add-on"><i class="icon-tag"></i></span><%= f.text_field :tag_list, placeholder: "#tags, #2ne1, #bigbang, etc..." %><%= f.label :tag_list, "Separate tags with commas" %>
+			</div>
+			<%= f.text_area :content, placeholder: "Post something..." %>
+			<%= f.label :post_image, "Upload a post image" %>
+			<i class="icon-camera icon-2x"></i>
+			<%= f.file_field :post_image %>
+			<%= f.label :post_image_remote_url_file_name, "or select from URL" %>
+			<%= f.text_field :post_image_remote_url_file_name, placeholder: "Image url... http://..." %>
+			<%= f.submit "Post", class: "btn btn-large submit_button" %>
+			<button class="cancel_post btn btn-large submit_button_red">Cancel</button>
+		</div>
+</div>
+		<%= render 'shared/error_messages', object: f.object %>
+	<% end %>
+</div>

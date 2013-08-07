@@ -1,0 +1,6 @@
+<% if @trending_items.any? %>
+  <ol class="microposts">
+    <%= render partial: 'shared/trending_item', collection: @trending_items %>
+  </ol>
+  <%= will_paginate @trending_items %>
+<% end %>

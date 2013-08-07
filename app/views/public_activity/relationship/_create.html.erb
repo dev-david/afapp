@@ -1,0 +1,8 @@
+<% if activity.trackable %>
+	<div class="activity">
+		<%= link_to activity.owner.user_name, activity.owner if activity.owner %> is now following
+		<%= link_to activity.trackable.followed.user_name, activity.trackable.followed %>
+		<br>
+		<span class="timestamp"><%= time_ago_in_words(activity.created_at) %> ago</span>
+	</div>
+<% end %>

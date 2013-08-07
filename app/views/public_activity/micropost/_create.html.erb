@@ -1,0 +1,10 @@
+<% if activity.trackable %>
+	<div class="activity">
+		<%= link_to activity.owner.user_name, activity.owner if activity.owner %> has a new 
+		<%= link_to 'post', activity.owner %>
+		<br>
+		"...<%= truncate(activity.trackable.content) %>"
+		<br>
+		<span class="timestamp"><%= time_ago_in_words(activity.created_at) %> ago</span>
+	</div>
+<% end %>

@@ -1,0 +1,14 @@
+<% if activity.trackable %>
+	<div class="activity">
+		<%= link_to activity.owner.user_name, activity.owner if activity.owner %> commented on 
+		<% if activity.owner == activity.trackable.micropost.user %>
+			his own <%= link_to 'post.', activity.trackable.micropost.user %>
+		<% else %>
+			<%= link_to activity.trackable.micropost.user.user_name, activity.trackable.micropost.user %>'s post.
+		<% end %>
+		<br>
+		"<%= truncate(activity.trackable.content) %>..."
+		<br>
+		<span class="timestamp"><%= time_ago_in_words(activity.created_at) %> ago</span>
+	</div>
+<% end %>

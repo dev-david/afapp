@@ -1,0 +1,30 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= image_tag @user.avatar.url(:thumb) %>  
+      <h1><%= @user.user_name %></h1>
+      <span><%= link_to "View #{@user.user_name}'s profile", @user %></span>
+      <span><b>Posts:</b> <%= @user.microposts.count %></span>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+      <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <%= link_to image_tag(user.avatar.url(:tiny),:class => "avatar",), user %>    
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+  <div class="span7">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
+    <% end %>
+  </div>
+</div>

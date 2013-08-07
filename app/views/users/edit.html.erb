@@ -1,0 +1,48 @@
+<% provide(:title, "Edit profile") %>
+<div class="row">
+  <aside class="span3">
+    <section>
+      <h1>
+        <%= link_to image_tag(@user.avatar.url(:thumb), :class => "avatar"), @user.avatar.url %>
+        <%= @user.user_name %>
+      </h1>
+      <span><%= @user.first_name %> <%= @user.last_name %></span>
+    </section>
+  </aside>
+  <div class="span6">
+    <div class="david_unit">
+      <h3>Update your profile</h3>
+      <%= form_for @user, :url => user_path, :html => { :multipart => true } do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.label :user_name %>
+        <%= f.text_field :user_name %>
+
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.label :password_confirmation, "Confirm Password" %>
+        <%= f.password_field :password_confirmation %>
+
+        <%= f.label :avatar, "Select an avatar" %>
+        <%= f.file_field :avatar %>
+
+        <%= f.label :avatar_url, "or select from URL" %>
+        <%= f.text_field :avatar_remote_url %>
+
+        <%= f.submit "Save changes", class: "btn btn-large submit_button" %>
+      <% end %>
+
+      <h4>Avatar: </h4><%= link_to image_tag(@user.avatar.url(:thumb)), @user.avatar.url %>    
+    </div>
+  </div>
+</div>

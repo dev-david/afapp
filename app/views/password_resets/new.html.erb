@@ -1,0 +1,15 @@
+<div class="span4">
+	<div class="david_unit">
+	<h3><%= link_to "Asia Fan", root_path %> - Reset Password</h3>
+		<%= form_tag password_resets_path, :method => :post do %>
+			<div class="field">
+				<%= label_tag :email %>
+				<%= text_field_tag :email, params[:email] %>
+			</div>
+			<div class="actions">
+				<%= submit_tag "Reset Password", class: 'btn btn-large submit_button' %>
+	            <%= link_to "Main Page", root_path, class: "btn btn-large submit_button_red"%>
+			</div>
+		<% end %>
+	</div>
+</div>

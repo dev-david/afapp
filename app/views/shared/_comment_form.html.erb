@@ -1,0 +1,19 @@
+<!-- ******* FORM FOR COMMENTS ******* -->
+<a class="comment_button"><i class="icon-edit icon-2x"></i> <i class="icon-camera icon-2x"></i></a>
+<div class="comment_field">
+	<%= form_for Comment.new, :html => { :multipart => true } do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
+	<%= f.hidden_field :micropost_id, :value => trending_item.id %>
+	<div class="field">
+		<%= f.text_area :content, placeholder: "Comment on this..."%>
+		<%= f.label :comment_image, "Upload a comment image" %>
+		<i class="icon-camera icon-2x"></i>
+		<%= f.file_field :comment_image %>
+		<%= f.label :comment_image_remote_url, "or select from URL" %>
+		<%= f.text_field :comment_image_remote_url, placeholder: 'image url... http://...' %>
+		<%= f.submit "Comment", class: "btn btn-small submit_button_purple" %>
+		<button class="cancel_comment btn btn-small submit_button_red">Cancel</button>
+	</div>
+	<% end %>
+</div>

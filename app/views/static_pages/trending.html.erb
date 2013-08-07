@@ -1,0 +1,41 @@
+<% if signed_in? %>
+	<div class="row">
+		<aside class="span4 ">
+			<section>
+				<%= render 'shared/user_info' %>
+			</section>
+			<section>
+				<%= render 'shared/stats' %>
+			</section>
+			<section>
+				<%= render 'shared/micropost_form', :locals => { :micropost => new_micropost } %>
+			</section>
+			<section>
+				<%= render 'shared/recent_activity', :locals => { :activities => recent_activity } %>
+			</section>
+		</aside>
+		<div class="span7 david_trends_bg">
+			<% provide(:title, 'Trending now') %>
+			<h3>Trending now</h3>
+			<%= render 'shared/trending' %>
+	    </div>
+	</div>  
+<% else %>
+	<div style="width: 950px; margin: 0px auto;">
+		<div class="david_left">
+			<%= render 'shared/carousel' %>
+		</div>
+		<div class="david_right">
+			<div class="center david_unit">
+				<h1 class="h_nice">Asia Fan</h1>
+				<p class="david_blue">Where enthusiasts of the Asian scene can post and share</p>
+				<p><i class="icon-comment-alt icon-large"></i> <i class="icon-camera icon-large"></i> <i class="icon-user icon-large"> <i class="icon-globe icon-large"></i></i></p>
+				<%= link_to "Join Asia Fan!", signup_path, class: "btn btn-large submit_button_purple" %>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div><br /><br />	
+	<div class="center">
+		<p>2ne1. Big Bang. Andy Lau. Integra Type R's. Squash Air Spencers. Pho. Dim Sum. Pocky. Travel. And everything in-between.</p>
+	</div>
+<% end %> 
