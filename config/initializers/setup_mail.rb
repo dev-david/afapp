@@ -10,5 +10,5 @@ ActionMailer::Base.smtp_settings = {
 
 }
 
-ActionMailer::Base.default_url_options[:host] = "secret-fjord-8839.herokuapp.com"
+ActionMailer::Base.default_url_options[:host] = "enigmatic-island-9700.herokuapp.com"
 Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?

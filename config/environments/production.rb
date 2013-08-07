@@ -66,7 +66,7 @@ Afapp::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # In production. :host should be set to the actual host of your application
-  config.action_mailer.default_url_options = { :host => "secret-fjord-8839.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "enigmatic-island-9700.herokuapp.com" }
 
   # For paperclip uploads to amazon s3
   config.paperclip_defaults = {

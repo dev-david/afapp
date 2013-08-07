@@ -36,7 +36,7 @@ Afapp::Application.configure do
   config.assets.debug = true
 
   # Added for urls in pw reset emails railscast
-  config.action_mailer.default_url_options = { :host => "secret-fjord-8839.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "enigmatic-island-9700.herokuapp.com" }
 
   config.action_mailer.delivery_method = :smtp
 
