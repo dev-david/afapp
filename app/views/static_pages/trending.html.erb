@@ -1,6 +1,6 @@
 <% if signed_in? %>
 	<div class="row">
-		<aside class="span4 ">
+		<aside class="span4">
 			<section>
 				<%= render 'shared/user_info' %>
 			</section>
@@ -21,21 +21,18 @@
 	    </div>
 	</div>  
 <% else %>
-	<div style="width: 950px; margin: 0px auto;">
-		<div class="david_left">
-			<%= render 'shared/carousel' %>
-		</div>
-		<div class="david_right">
-			<div class="center david_unit">
-				<h1 class="h_nice">Asia Fan</h1>
-				<p class="david_blue">Where enthusiasts of the Asian scene can post and share</p>
-				<p><i class="icon-comment-alt icon-large"></i> <i class="icon-camera icon-large"></i> <i class="icon-user icon-large"> <i class="icon-globe icon-large"></i></i></p>
-				<%= link_to "Join Asia Fan!", signup_path, class: "btn btn-large submit_button_purple" %>
-			</div>
-		</div>
-	</div>
-	<div class="clear"></div><br /><br />	
+	<div class="span4">
 	<div class="center">
-		<p>2ne1. Big Bang. Andy Lau. Integra Type R's. Squash Air Spencers. Pho. Dim Sum. Pocky. Travel. And everything in-between.</p>
+		<div class="david_unit">
+			<h1 class="h_nice">Asia Fan</h1>
+			<p class="david_blue">Where enthusiasts of the Asian scene can post and share</p>
+			<%= link_to "Sign In", signin_path, class: "btn btn-large submit_button"%>
+			<%= link_to "Join Asia Fan!", signup_path, class: "btn btn-large submit_button_green", id: :pop %>
+			<%= render 'shared/carousel_icon' %>
+		</div>
+		<p class="h_nice white">2ne1. Big Bang. Andy Lau. Integra Type R's. Squash Air Spencers. Pho. Dim Sum. Pocky. Travel. And everything in-between. <br>
+		<%= link_to "- About Us -", about_path, :class => "h_nice white" %></p>
+
+	</div>
 	</div>
 <% end %> 
