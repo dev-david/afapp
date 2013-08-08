@@ -19,7 +19,7 @@ module ApplicationHelper
   end
 
   def randomized_background_image
-    images = ["/images/bigbangbluetaeyang.jpg", "/images/2ne1acoustic.jpg", "/images/cl2ne1.jpg", "/images/bom_iloveu.jpg", "/images/tokyocitynight.jpg", "/images/japangundam.jpg", "/images/bigbangbluemv.jpg", "/images/carnightdrift.jpg", "/images/phodacbiet.jpg", "/images/tokyonight.jpg", "/images/initial2.png", "/images/ggeneration.jpg"]
+    images = ["/images/2ne1acoustic.jpg", "/images/cl2ne1.jpg", "/images/bom_iloveu.jpg", "/images/tokyocitynight.jpg", "/images/japangundam.jpg", "/images/bigbangbluemv.jpg", "/images/carnightdrift.jpg", "/images/phodacbiet.jpg", "/images/tokyonight.jpg", "/images/initial2.png", "/images/ggeneration.jpg", "/images/skyline.jpg", "/images/moodgirl.jpg", "/images/silvias13.jpg", "/images/tmntnes.jpg", "/images/dragongirlanime.jpg", "/images/animegirlmood.jpg", "/images/animehug.jpg", "/images/animegirlawesome.jpg", "/images/evo.jpg", "/images/chineselantern.jpg", "/images/bruceleedrawing.jpg"]
     images[rand(images.size)]
   end
 

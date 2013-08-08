@@ -1,7 +1,7 @@
 <div class="span4">
+	<img class="about_img" src="images/bomyouandi.jpg" alt="Bom Park"/>	
 	<div class="david_unit">
 		<div class="center">
-			<img src="images/bomyouandi.jpg" alt="Bom Park" style="width: 450px;"/>
 			<h3>About Us</h3>
 			 <%= link_to "Asia Fan", root_path %>. Where enthusiasts of the Asian scene can share.
 		</div>
@@ -14,10 +14,20 @@
 			<%= link_to "Sign In", signin_path, class: "btn btn-large submit_button"%>
 			<%= link_to "Join Asia Fan!", signup_path, class: "btn btn-large submit_button_green", id: :pop %><br>
 			<% end %>
-			<small>
-				<%= link_to "Asia Fan", root_path %>
-				by <a href="http://www.devdavid.com" target="_blank">Dev David</a>
+			<small>*This is a sample site for entertainment purposes only.<br>
+			<%= link_to "Asia Fan", root_path %>
+			by <a href="http://www.devdavid.com" target="_blank">Dev David</a>			
 			</small>
 		</div>
+	</div>
+</div>
+<div class="span6">
+	<div class="about_unit">
+		<div class="center">
+			<h3>Site Preview</h3>
+		</div>
+	</div>
+	<div class="about_img">
+		<%= link_to image_tag("/images/asiafandash.jpg"), "/images/asiafandash.jpg" %>
 	</div>
 </div>
