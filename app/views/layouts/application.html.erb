@@ -26,7 +26,7 @@
     <% end %>
     <% if signed_in? %>
         <%= render 'layouts/header' %>
-        <div class="container" style="margin-top: -20px; padding-top: 90px;">
+        <div class="container-fluid" style="margin-top: -20px; padding-top: 90px;">
     <% end %>
     <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>

@@ -192,7 +192,8 @@ z-index: 1;
   margin-bottom: 5px;
   background-color: transparent;
   border: none;
-  color: #0066CC;
+  /*color: #0066CC;*/
+  color: #ffffff;
 }
 
 .comment_button:hover{
@@ -300,13 +301,18 @@ z-index: 1;
 }
 
 .david_trends_bg {
-  background-color: #71CEEB;
-  /*background-color: #A9A9C6;*/
+  /*background-color: #71CEEB;*/
+  /*background-color: #34495E;*/
+  background-color: #3498db;
   margin-left: 5px;
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 3px;
-  box-shadow: 0px 0px 5px #141414;
+  /*box-shadow: 0px 0px 5px #141414;*/
+}
+
+.david_trends_bg h3 {
+  color: #ecf0f1;
 }
 
 .david_triangle {
@@ -577,7 +583,8 @@ html{
   height: 100%; 
   width: 100%;
   margin: 0;
-  background-color: #34495e;
+  /*background-color: #34495e;*/
+  background-color: #3498db;
 }
 
 body {
@@ -585,7 +592,8 @@ body {
   height: 100%; 
   width: 100%;
   margin: 0;
-  background-color: #34495e;
+  /*background-color: #34495e;*/
+  background-color: #3498db;
 }
 
 section {
@@ -784,15 +792,19 @@ input {
 
   li {
     padding: 10px 0;
-    /*border-top: 1px solid #e8e8e8;*/
-    border-top: 1px solid #929DB2;
+    border-top: 1px solid #e8e8e8;
+    /*border-top: 1px solid #929DB2;*/
   }
 }
 
 .content_list:nth-of-type(odd) {  
-  background-color: #A8A8D5;
+  /*background-color: #A8A8D5;*/
+  /*background-color: #34495E;*/
+  /*background-color: #3498db;*/
   border-radius: 5px;
-  box-shadow: 0px 0px 5px #141414;
+  /*box-shadow: 0px 0px 5px #141414;*/
+  border-top: 5px #115d8e;
+
 
 }
 
