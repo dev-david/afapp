@@ -1,5 +1,5 @@
 <% provide(:title, 'Asia Fans') %>
-<div class="row">
+<div class="row-fluid">
 	<aside class="span4">
 		<section>
 			<%= render 'shared/user_info' %>
@@ -12,8 +12,8 @@
 			<%= render 'shared/recent_activity', :locals => { :activities => recent_activity } %>
 		</section>
 	</aside>
-	<div class="span7 david_trends_bg">
-		<h1>Asia Fans</h1>
+	<div class="span8 david_trends_bg">
+		<h1 class="white_h">Asia Fans</h1>
 		<%= will_paginate %>
 		<ul class="users david_trends_bg">
 		  <%= render @users %>

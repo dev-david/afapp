@@ -39,7 +39,10 @@
 	<!-- ***** SHOW COMMENTS FOR TRENDING ITEM ***** -->
 	<div class="content_feed_post_comment">
 		<% trending_item.comments.order("created_at desc").each do |comment| %>
-			<div class="bubble_green">
+			<span>
+				<%= link_to image_tag(comment.user.avatar.url(:tiny),:class => "avatar_comment"), comment.user %>
+			</span>
+			<div class="bubble_comment">
 				<div class="comment_user"><%= link_to comment.user.user_name, comment.user%></div>
 				<% if !comment.tag_list.blank? %>
 					<div class="tag">
@@ -66,10 +69,8 @@
 						</div>
 					<% end %>
 				</div>
-			</div> <!-- end bubble_green -->
-			<span>
-				<%= link_to image_tag(comment.user.avatar.url(:tiny),:class => "avatar_comment"), comment.user %>
-			</span>
+			</div> <!-- end bubble_comment -->
+			
 		<div class="clear"></div>
 		<% end %>
 	</div>

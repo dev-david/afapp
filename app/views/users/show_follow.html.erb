@@ -1,5 +1,5 @@
 <% provide(:title, @title) %>
-<div class="row">
+<div class="row-fluid">
   <aside class="span4">
     <section>
       <%= image_tag @user.avatar.url(:thumb) %>  
@@ -18,8 +18,8 @@
       <% end %>
     </section>
   </aside>
-  <div class="span7">
-    <h3><%= @title %></h3>
+  <div class="span8">
+    <h3 class="white_h"><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users">
         <%= render @users %>

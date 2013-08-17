@@ -12,7 +12,7 @@
 					<i class="icon-tag"></i> <%= raw micropost.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 				</div>
 			<% end %>
-			<span class="micropost_content"><%= micropost.content %></span>
+			<span class="micropost_content"><%= simple_format(micropost.content) %></span>
 			<% if micropost.post_image_file_name %>
 				<div class="post_image_thumb"><%= link_to image_tag(micropost.post_image.url(:medium)), micropost.post_image.url %></div>
 			<% end %>
@@ -39,37 +39,38 @@
 	<!-- ***** SHOW COMMENTS ***** -->
 	<div class="content_feed_post_comment">
 		<% micropost.comments.order("created_at desc").each do |comment| %>
-					<div class="bubble_green">
-						<div class="comment_user"><%= link_to comment.user.user_name, comment.user %></div>
-							<% if !comment.tag_list.blank? %>
-								<div class="tag">
-									<i class="icon-tag"></i> <%= raw comment.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-								</div>
-							<% end %>
-							<%= comment.content%>
-							<% if !comment.comment_image_file_name.blank?%>
-								<br><%= link_to image_tag(comment.comment_image.url(:medium)), comment.comment_image.url %><br/>
-							<% end %>
-							<div class="timestamp">Posted <%= time_ago_in_words(comment.updated_at)%> ago. 
-								<!-- ***** FORM FOR LIKE / THUMBS UP ***** -->
-								<%= form_for Like.new, :html => { :class => "button_like", :multipart => true } do |l| %>
-									<%= l.hidden_field :user_id, :value => current_user.id %>
-									<%= l.hidden_field :comment_id, :value => comment.id %>
-									<button type="submit" class="button_like"><i class="icon-heart icon-large"></i> <%= comment.likes.count%></button>
-								<% end %>
-								<% if current_user?(comment.user) or current_user.admin? %>
-									<div>
-										<%= link_to "Delete", comment, method: :delete,
-													                     class: 'david_red',
-													                     data: { confirm: "You sure you want to delete this comment by #{comment.user.user_name}?" },
-													                     title: comment.content %>
-									</div>
-								<% end %>
+			<span>
+				<%= link_to image_tag(comment.user.avatar.url(:tiny),:class => "avatar_comment"), comment.user %>
+			</span>
+			<div class="bubble_comment">
+				<div class="comment_user"><%= link_to comment.user.user_name, comment.user %></div>
+					<% if !comment.tag_list.blank? %>
+						<div class="tag">
+							<i class="icon-tag"></i> <%= raw comment.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+						</div>
+					<% end %>
+					<%= simple_format(comment.content) %>
+					<% if !comment.comment_image_file_name.blank?%>
+						<br><%= link_to image_tag(comment.comment_image.url(:medium)), comment.comment_image.url %><br/>
+					<% end %>
+					<div class="timestamp">Posted <%= time_ago_in_words(comment.updated_at)%> ago. 
+						<!-- ***** FORM FOR LIKE / THUMBS UP ***** -->
+						<%= form_for Like.new, :html => { :class => "button_like", :multipart => true } do |l| %>
+							<%= l.hidden_field :user_id, :value => current_user.id %>
+							<%= l.hidden_field :comment_id, :value => comment.id %>
+							<button type="submit" class="button_like"><i class="icon-heart icon-large"></i> <%= comment.likes.count%></button>
+						<% end %>
+						<% if current_user?(comment.user) or current_user.admin? %>
+							<div>
+								<%= link_to "Delete", comment, method: :delete,
+											                     class: 'david_red',
+											                     data: { confirm: "You sure you want to delete this comment by #{comment.user.user_name}?" },
+											                     title: comment.content %>
 							</div>
-					</div> <!-- end bubble_green -->
-					<span>
-						<%= link_to image_tag(comment.user.avatar.url(:tiny),:class => "avatar_comment"), comment.user %>
-					</span>
+						<% end %>
+					</div>
+			</div> <!-- end bubble_comment -->
+					
 		<div class="clear"></div>
 		<% end %>
 	</div>
