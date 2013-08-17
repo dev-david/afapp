@@ -798,15 +798,22 @@ input {
   }
 }
 
+.content_list {  
+  /*background-color: #A8A8D5;*/
+  /*background-color: #34495E;*/
+  /*background-color: #3498db;*/
+  /*border-radius: 5px;*/
+  /*box-shadow: 0px 0px 5px #141414;*/
+  border-top: solid 2px #ffffff;
+}
+
 .content_list:nth-of-type(odd) {  
   /*background-color: #A8A8D5;*/
   /*background-color: #34495E;*/
   /*background-color: #3498db;*/
-  border-radius: 5px;
+  /*border-radius: 5px;*/
   /*box-shadow: 0px 0px 5px #141414;*/
-  border-top: 5px #115d8e;
-
-
+  /*border-top: solid 5px #115d8e;*/
 }
 
 .content_feed_post {
