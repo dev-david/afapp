@@ -59,7 +59,7 @@ h1, h2, h3, h4 {
   float: left;
   margin-left: 5px;
   margin-right: 10px;
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;*/
   border-radius: 7px;
   box-shadow: 0px 0px 5px #141414;
 }
@@ -116,7 +116,7 @@ h1, h2, h3, h4 {
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
-  margin-top: 15px;
+  /*margin-top: 15px;*/
   margin-left: 15px;
   display: inline-block;
   max-width: 500px;
@@ -197,7 +197,8 @@ z-index: 1;
 }
 
 .comment_button:hover{
-  color: #29297A;
+  /*color: #29297A;*/
+  color: #2be189;
 }
 
 .comment_field {
