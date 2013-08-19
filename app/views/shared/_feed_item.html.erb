@@ -16,6 +16,9 @@
 			<% if feed_item.post_image_file_name %>
 				<div class="post_image_thumb"><%= link_to image_tag(feed_item.post_image.url(:medium)), feed_item.post_image.url %></div>
 			<% end %>
+			<% if feed_item.video %>
+				<div class="youtubevideo"><%= raw(youtube_embed(feed_item.video)) %></div>
+			<% end %>
 			<div class="timestamp"> 
 				Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
 				<!-- ***** FORM FOR LIKE / THUMBS UP ***** -->

@@ -13,6 +13,9 @@
 			<%= f.file_field :post_image %>
 			<%= f.label :post_image_remote_url_file_name, "or select from URL" %>
 			<%= f.text_field :post_image_remote_url_file_name, placeholder: "Image url... http://..." %>
+			<%= f.label :video, "Upload YouTube video link" %>
+			<i class="icon-youtube icon-2x"></i>
+			<%= f.text_field :video, placeholder: "http://www.youtube.com..." %>
 			<%= f.submit "Post", class: "btn btn-large submit_button" %>
 			<button class="cancel_post btn btn-large submit_button_red">Cancel</button>
 		</div>

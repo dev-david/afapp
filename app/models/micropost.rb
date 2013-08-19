@@ -27,7 +27,7 @@ class Micropost < ActiveRecord::Base
 	tracked only: :create, owner: ->(controller, model) { controller && controller.current_user }
 	# tracked except: :destroy, recipient: ->(controller, model) { model && model.user }
 
-	attr_accessible :content, :post_image, :post_image_remote_url_file_name, :title, :tag, :tag_list
+	attr_accessible :content, :post_image, :post_image_remote_url_file_name, :title, :tag, :tag_list, :video
 	acts_as_taggable
 	
 	belongs_to :user

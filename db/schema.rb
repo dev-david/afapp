@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130712203602) do
+ActiveRecord::Schema.define(:version => 20130819102057) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20130712203602) do
     t.datetime "post_image_remote_url_updated_at"
     t.string   "tag"
     t.string   "title"
+    t.string   "video"
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
