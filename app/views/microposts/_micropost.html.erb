@@ -16,6 +16,9 @@
 			<% if micropost.post_image_file_name %>
 				<div class="post_image_thumb"><%= link_to image_tag(micropost.post_image.url(:medium)), micropost.post_image.url %></div>
 			<% end %>
+			<% if micropost.video.present? %>
+				<div class="youtubevideo"><%= raw(youtube_embed(micropost.video)) %></div>
+			<% end %>
 			<div class="timestamp"> 
 				Posted <%= time_ago_in_words(micropost.created_at) %> ago.
 				<!-- ***** FORM FOR LIKE / THUMBS UP ***** -->

@@ -1,6 +1,6 @@
 class CreateUsers < ActiveRecord::Migration
   def change
-     create_table "activities", :force => true do |t|
+    create_table "activities", :force => false do |t|
     t.integer  "trackable_id"
     t.string   "trackable_type"
     t.integer  "owner_id"
@@ -17,7 +17,7 @@ class CreateUsers < ActiveRecord::Migration
   add_index "activities", ["recipient_id", "recipient_type"], :name => "index_activities_on_recipient_id_and_recipient_type"
   add_index "activities", ["trackable_id", "trackable_type"], :name => "index_activities_on_trackable_id_and_trackable_type"
 
-  create_table "comments", :force => true do |t|
+  create_table "comments", :force => false do |t|
     t.integer  "user_id"
     t.string   "content"
     t.integer  "micropost_id"
@@ -31,7 +31,7 @@ class CreateUsers < ActiveRecord::Migration
     t.string   "tag"
   end
 
-  create_table "likes", :force => true do |t|
+  create_table "likes", :force => false do |t|
     t.integer  "user_id"
     t.integer  "micropost_id"
     t.integer  "comment_id"
@@ -43,7 +43,7 @@ class CreateUsers < ActiveRecord::Migration
   add_index "likes", ["micropost_id"], :name => "index_likes_on_micropost_id"
   add_index "likes", ["user_id"], :name => "index_likes_on_user_id"
 
-  create_table "microposts", :force => true do |t|
+  create_table "microposts", :force => false do |t|
     t.string   "content"
     t.integer  "user_id"
     t.datetime "created_at",                         :null => false
@@ -62,7 +62,7 @@ class CreateUsers < ActiveRecord::Migration
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
 
-  create_table "relationships", :force => true do |t|
+  create_table "relationships", :force => false do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
     t.datetime "created_at",  :null => false
@@ -73,7 +73,7 @@ class CreateUsers < ActiveRecord::Migration
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
-  create_table "taggings", :force => true do |t|
+  create_table "taggings", :force => false do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
     t.string   "taggable_type"
@@ -86,11 +86,11 @@ class CreateUsers < ActiveRecord::Migration
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
   add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
-  create_table "tags", :force => true do |t|
+  create_table "tags", :force => false do |t|
     t.string "name"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "users", :force => false do |t|
     t.string   "user_name"
     t.string   "first_name"
     t.string   "last_name"

@@ -16,8 +16,8 @@
 			<% if trending_item.post_image_file_name %>
 				<div class="post_image_thumb"><%= link_to image_tag(trending_item.post_image.url(:medium)), trending_item.post_image.url %></div>
 			<% end %>
-			<% if trending_item.video %>
-				<div class="youtubevideo"><%= raw(youtube_embed(trending_item.video)) %></div>
+			<% if trending_item.video.present? %>
+				<div class="youtubevideo"> <%= raw(youtube_embed(trending_item.video)) %></div>
 			<% end %>
 			<div class="timestamp"> 
 				Posted <%= time_ago_in_words(trending_item.created_at) %> ago.
