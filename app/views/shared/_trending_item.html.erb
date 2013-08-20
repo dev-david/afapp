@@ -1,10 +1,10 @@
 <li class="content_list" id="<%= trending_item.id %>">
 	<div>
-		<%= link_to image_tag(trending_item.user.avatar.url(:thumb),:class => "avatar userquote"), trending_item.user %>
+		<%= link_to image_tag(trending_item.user.avatar.url(:thumb),:class => "avatar"), trending_item.user %>
 	</div>
 	<div class="bubble">
 		<span class="user">
-			<%= link_to trending_item.user.user_name, trending_item.user, :class => "userquote" %>
+			<%= link_to trending_item.user.user_name, trending_item.user %>
 		</span>
 		<div class="content_feed_post">
 			<% if !trending_item.tag_list.blank? %>
