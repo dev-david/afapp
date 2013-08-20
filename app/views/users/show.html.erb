@@ -6,6 +6,11 @@
 				<%= link_to image_tag(@user.avatar.url(:thumb), :class => "avatar"), @user.avatar.url %>
 				<%= @user.user_name %>
 			</h1>
+			<% if @user.quote %>
+				<div class="quote">
+					<%= @user.quote %>
+				</div>
+			<% end %>
 		</section>
 		<section>
 			<%= render 'shared/stats' %>

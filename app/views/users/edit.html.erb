@@ -6,6 +6,11 @@
         <%= link_to image_tag(@user.avatar.url(:thumb), :class => "avatar"), @user.avatar.url %>
         <%= @user.user_name %>
       </h1>
+      <% if @user.quote %>
+        <div class="quote">
+          <%= @user.quote %>
+        </div>
+      <% end %>
       <span><%= @user.first_name %> <%= @user.last_name %></span>
     </section>
   </aside>
@@ -37,7 +42,10 @@
         <%= f.file_field :avatar %>
 
         <%= f.label :avatar_url, "or select from URL" %>
-        <%= f.text_field :avatar_remote_url %>
+        <%= f.text_field :avatar_remote_url, placeholder: 'image url... http://...' %>
+
+        <%= f.label :quote, "Optional short quote 100 character max" %>
+        <%= f.text_field :quote, placeholder: 'I love goldddd', :maxlength => 100 %>
 
         <%= f.submit "Save changes", class: "btn btn-large submit_button" %>
       <% end %>

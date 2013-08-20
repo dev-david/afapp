@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 
 	include PublicActivity::Common
 	
-	attr_accessible :email, :first_name, :last_name, :user_name, :password, :password_confirmation, :avatar, :avatar_remote_url
+	attr_accessible :email, :first_name, :last_name, :user_name, :password, :password_confirmation, :avatar, :avatar_remote_url, :quote
 	has_secure_password
 
 	# tracked only: :create, owner: ->(controller, model) { controller && controller.current_user }
@@ -61,6 +61,7 @@ class User < ActiveRecord::Base
 	validates_attachment_size :avatar, :less_than => 3.megabytes
 	validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']
 	# validates_presence_of :avatar_remote_url, :if => :avatar_url_provided?, :message => 'is invalid or inaccessible'
+	validates :quote, length: { maximum: 100 }
 
 	default_scope order: 'users.user_name asc'
 

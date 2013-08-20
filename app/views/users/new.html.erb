@@ -30,6 +30,9 @@
             <%= f.label :avatar_url, "or select avatar from URL" %>
             <%= f.text_field :avatar_remote_url, placeholder: 'image url... http://...' %>
 
+            <%= f.label :quote, "Optional short quote 100 character max" %>
+            <%= f.text_field :quote, placeholder: 'Wow. Fantastic baby.', :maxlength => 100 %>
+
             <%= f.submit "Create my account", class: "btn btn-large submit_button" %>
             <%= link_to "Main Page", root_path, class: "btn btn-large submit_button_red"%>
     </div>

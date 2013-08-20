@@ -4,6 +4,11 @@
 <h1>
 	<%= current_user.user_name %>
 </h1>
+<% if current_user.quote %>
+	<div class="quote">
+		<%= current_user.quote %>
+	</div>
+<% end %>
 <span>
 	<%= link_to "View my profile", current_user %>
 </span>
