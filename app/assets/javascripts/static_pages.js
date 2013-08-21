@@ -33,6 +33,9 @@ $(document).ready(function()
         content: 'come join us!',
         trigger: 'hover'
     });
+    jQuery(function() {
+      $("a.fancybox").fancybox();
+    });
     // $('.post_button').popover({
     //     title: "&lt;_&lt;",
     //     content: "Damn.",

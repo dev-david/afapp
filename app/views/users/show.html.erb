@@ -3,7 +3,7 @@
 	<aside class="span4">
 		<section>
 			<h1>
-				<%= link_to image_tag(@user.avatar.url(:thumb), :class => "avatar"), @user.avatar.url %>
+				<%= link_to image_tag(@user.avatar.url(:thumb), :class => "avatar"), @user.avatar.url, {:class => 'fancybox'} %>
 				<%= @user.user_name %>
 			</h1>
 			<% if @user.quote %>

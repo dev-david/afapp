@@ -63,6 +63,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fancybox-rails (0.2.1)
+      railties (>= 3.1.0)
     flat-ui-rails (0.0.2)
     font-awesome-rails (3.2.1.2)
       railties (>= 3.2, < 5.0)
@@ -166,6 +168,7 @@ DEPENDENCIES
   bootstrap-will_paginate (= 0.0.6)
   capistrano
   coffee-rails (= 3.2.2)
+  fancybox-rails
   flat-ui-rails
   font-awesome-rails
   hirb

@@ -3,7 +3,7 @@
   <aside class="span3">
     <section>
       <h1>
-        <%= link_to image_tag(@user.avatar.url(:thumb), :class => "avatar"), @user.avatar.url %>
+        <%= link_to image_tag(@user.avatar.url(:thumb), :class => "avatar"), @user.avatar.url, {:class => 'fancybox'} %>
         <%= @user.user_name %>
       </h1>
       <% if @user.quote %>
@@ -50,7 +50,7 @@
         <%= f.submit "Save changes", class: "btn btn-large submit_button" %>
       <% end %>
 
-      <h4>Avatar: </h4><%= link_to image_tag(@user.avatar.url(:thumb)), @user.avatar.url %>    
+      <h4>Avatar: </h4><%= link_to image_tag(@user.avatar.url(:thumb)), @user.avatar.url, {:class => 'fancybox'} %>    
     </div>
   </div>
 </div>

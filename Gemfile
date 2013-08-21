@@ -18,6 +18,7 @@ gem 'acts-as-taggable-on'
 # gem 'sass-rails', '3.2.5'
 gem 'newrelic_rpm'
 gem "flat-ui-rails"
+gem 'fancybox-rails'
 
 
 # Bundle edge Rails instead:
