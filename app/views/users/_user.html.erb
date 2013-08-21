@@ -7,7 +7,12 @@
 	</span>
 	<% end %>
   <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "Delete", user, method: :delete,
+    | 
+     <%= user.first_name + ' ' + user.last_name %> |
+     <%= user.email %> |
+     Joined: <%= user.created_at %> |
+
+    <%= link_to "Delete", user, method: :delete,
 								  class: 'david_red',
                                   data: { confirm: "You sure you want to delete #{user.user_name}?" } %>
   <% end %>

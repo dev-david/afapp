@@ -11,6 +11,11 @@
 					<%= @user.quote %>
 				</div>
 			<% end %>
+			<% if current_user.admin? %>
+	           Name: <%= @user.first_name + ' ' + @user.last_name %><br>
+	           Email: <%= @user.email %><br>
+	           Joined: <%= @user.created_at %>
+	        <% end %>
 		</section>
 		<section>
 			<%= render 'shared/stats' %>

@@ -20,7 +20,11 @@
                     <% if signed_in? %>
                         <li id="fat-menu" class="dropdown">
     						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    						<%= current_user.user_name %> <i class="icon-cog icon-large"></i> <!-- <b class="caret"></b> -->
+    						<%= current_user.user_name %> - 
+                            <% if current_user.admin? %>
+                                <span>admin</span>
+                            <% end %>
+                            <i class="icon-cog icon-large"></i>
     						</a>
     						<ul class="dropdown-menu">
     							<li><%= link_to "Profile", current_user %></li>
